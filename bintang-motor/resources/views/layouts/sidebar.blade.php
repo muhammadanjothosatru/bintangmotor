@@ -23,6 +23,20 @@
             });
         })
         </script>
+        <script>
+            $(function(){
+                console.log('ready');
+                
+                $('#sidebar-wrapper a').click(function(e) {
+                    e.preventDefault()
+                    
+                    $that = $(this);
+                    
+                    $that.parent().find('a').removeClass('active');
+                    $that.addClass('active');
+                });
+            })
+        </script>
         <style>
             body {
         overflow-x: hidden;
@@ -39,11 +53,11 @@
 
         #sidebar-wrapper .sidebar-heading {
         padding: 0.875rem 1.25rem;
-        font-size: 1.2rem;
+            font-size: 1.2rem;
         }
 
-        #sidebar-wrapper .list-group {
-        width: 15rem;
+        #sidebar-wrapper {
+        width: 252px;
         }
 
         #page-content-wrapper {
@@ -76,40 +90,28 @@
         <!-- Sidebar -->
         <div class="" id="sidebar-wrapper">
         <div class="sidebar-heading"><img src="images/logo2.png" alt="" class="logo-size"></div>
-        <div class="list-group list-group-flush font">
-            <a href="#" class="list-group-item list-group-item-action" style="border: none">Dashboard</a>
-            <a href="#" class="list-group-item list-group-item-action" style="border: none">Kendaraan</a>
-            <a href="#" class="list-group-item list-group-item-action" style="border: none">Pelanggan</a>
-            <a href="#" class="list-group-item list-group-item-action" style="border: none">Pembelian</a>
-            <a href="#" class="list-group-item list-group-item-action" style="border: none">Laporan</a>
+        <div class="container-fluid p-0 justify-content-center">
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action font active" style="border: none">Dashboard</a>
+                <a href="#" class="list-group-item list-group-item-action font" style="border: none">Kendaraan</a>
+                <a href="#" class="list-group-item list-group-item-action font" style="border: none">Pelanggan</a>
+                <a href="#" class="list-group-item list-group-item-action font" style="border: none">Pembelian</a>
+                <a href="#" class="list-group-item list-group-item-action font" style="border: none">Laporan</a>
+            </div>
         </div>
+        
         </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div class="body-color" id="page-content-wrapper">
 
-        <nav class="navbar navbar-expand-lg navbar-light bar-color">
-            <button class="btn btn-primary" id="menu-toggle">Toggle</button>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Akun</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-                </li>
-            </ul>
+        <nav class="navbar navbar-expand-lg bar-color pl-0">
+            <div class="container-fluid p-0 m-0">
+                <button class="btn" id="menu-toggle"><img src="images/hamburgericon.png" alt="" class="icon-size"></button>
+                <span class="navbar-text font align">
+                    Admin Lamongan
+                </span>
             </div>
         </nav>
 

@@ -17,3 +17,15 @@
     font-weight: 600 !important;
     font-size: 12px !important;
 }
+
+.icon-size {
+    width: 24px;
+    height: 24px;
+}
+
+.navbar {
+    height: 62px !important;
+}
+
+.active {
+}
